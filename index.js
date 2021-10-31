@@ -48,7 +48,7 @@ async function run() {
             res.json(result);
         })
         // POST tourist API
-        app.get('/tourist', async (req, res) => {
+        app.post('/tourist', async (req, res) => {
             const tourist = req.body;
             console.log('hit the post', tourist)
             const result = await touristCollection.insertOne(tourist);
