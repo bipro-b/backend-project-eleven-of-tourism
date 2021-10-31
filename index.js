@@ -32,7 +32,11 @@ async function run() {
             const spots = await cursor.toArray();
             res.send(spots)
         })
-
+        app.get('/tourist', async (req, res) => {
+            const cursor = touristCollection.find({});
+            const tourist = await cursor.toArray();
+            res.send(tourist)
+        })
 
         //POST Spot API
 
