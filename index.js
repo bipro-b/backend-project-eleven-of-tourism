@@ -52,6 +52,15 @@ async function run() {
             res.json(result);
         })
 
+        // Delete API 
+        app.delete('/spots/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) };
+            const result = spotsCollection.deleteOne(query);
+            console.log('deleting id', result);
+            res.json(result);
+        })
+
     }
     finally {
         // await client.close()
